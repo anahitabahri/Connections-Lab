@@ -1,13 +1,13 @@
 let caterpillars = [];
 let caterpillarTimer = 0;
 let flowerCount = 0;
-const canvasHeight = 150; // Adjust to match your new header height
-const colors = [
-  '#A8D8EA', // Soft Blue
-  '#AA96DA', // Soft Purple
-  '#FCBAD3', // Soft Pink
-  '#FFFFD2', // Soft Yellow
-  '#95E1D3'  // Soft Teal
+let canvasHeight = 150;
+let colors = [
+  '#A8D8EA', // Blue
+  '#AA96DA', // Purple
+  '#FCBAD3', // Pink
+  '#FFFFD2', // Yellow
+  '#95E1D3'  // Teal
 ];
 let recentColors = []; // To track the colors of the last two caterpillars
 
@@ -117,7 +117,7 @@ function manageCaterpillars() {
       caterpillar.display();
     }
   } else {
-    // If flowers have started to be created, remove all caterpillars
+    
     caterpillars = [];
   }
 }
