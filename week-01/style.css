@@ -1,0 +1,92 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4e1d2;
+    color: #4a2c2a;
+}
+.potato-banner {
+    height: 100px;
+    background-color: #d4a373;
+    position: relative;
+    overflow: hidden;
+}
+.potato-row {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: moveAcross 25s linear infinite;
+}
+.potato {
+    width: 100px;
+    height: 100px;
+    background-image: url('potato1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    margin-right: 50px;
+}
+@keyframes moveAcross {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100vw); }
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0;
+}
+header {
+    text-align: center;
+    padding: 10px 0;
+}
+h1 {
+    font-size: 32px;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Slight gap between text and GIF */
+}
+.text, .gif {
+    width: 50%; /* Equal width for text and GIF */
+}
+.text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.text p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+iframe.giphy-embed {
+    width: 100%;
+    height: auto;
+}
+.closing-container {
+    background-color: #4a2c2a;
+    color: #f4e1d2;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.closing-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.cta {
+    background-color: #d4a373;
+    color: #4a2c2a;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+.cta:hover {
+    background-color: #b08566;
+}
