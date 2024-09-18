@@ -1,0 +1,40 @@
+/* styles.css */
+
+/* Importing a retro-style font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 18px;
+  background-color: #caf0f8; /* start with a light blue background */
+  color: #333;
+  text-align: center;
+  transition: background-color 0.5s ease; /* smooth transition for background color changes */
+}
+
+.story {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 600px; /* limit the width of the content for better readability */
+}
+
+section {
+  padding: 40px;
+  min-height: 75vh; /* each section takes up at least 75% of the viewport height - not something that was done in story-scroll, but helpful given transition */
+}
+
+p {
+  font-size: 22px; 
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+#catfish {
+  position: fixed; /* keep the fish in a fixed position relative to the viewport */
+  width: 150px;
+  left: 0; /* start at the left edge of the screen */
+  top: 70%; /* position near the bottom of the screen */
+  transform: translateX(0); /* initial position */
+  transition: transform 0.1s linear; /* smooth movement */
+}
