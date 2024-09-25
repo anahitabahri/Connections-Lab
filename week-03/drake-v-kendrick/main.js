@@ -24,7 +24,7 @@ images.forEach(img => {
 
     // show word cloud on image click
     img.addEventListener('click', () => {
-        const textId = img.getAttribute('data-text');
+        var textId = img.getAttribute('data-text');
         if (textId === "kendrick-text") {
             createWordCloud(wordsKendrick); // create Kendrick's word cloud
         } else if (textId === "drake-text") {
