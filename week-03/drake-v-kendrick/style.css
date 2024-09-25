@@ -15,12 +15,15 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
 }
+
 .left {
     left: 0;
 }
+
 .right {
     right: 0;
 }
+
 .centered {
     position: absolute;
     top: 50%;
@@ -28,13 +31,16 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .centered img {
     width: 200px;
     transition: transform 0.3s ease;
 }
+
 .centered img:hover {
     transform: scale(1.5);
 }
+
 .hover-text {
     position: fixed;
     top: 50%;
