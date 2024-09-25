@@ -1,0 +1,36 @@
+html, body {
+    margin: 0; 
+    padding: 0;
+    height: 100%; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .grid-container {
+    display: flex;
+    justify-content: center; /* center bubbles horizontally */
+    align-items: center; /* center bubbles vertically */
+    width: 100vw; /* full width of the viewport */
+    height: 100vh; /* full height of the viewport */
+    background-color: #f0f0f0; 
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bubble {
+    border-radius: 50%; 
+    cursor: pointer;
+    position: absolute; /* allow absolute positioning */
+    transition: transform 0.3s ease; /* smooth hover effect */
+  }
+  
+  .bubble-text {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    pointer-events: none; /* ensure text doesn’t interfere with hover events */
+  }
+  
