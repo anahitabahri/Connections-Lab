@@ -49,7 +49,7 @@ function createBubbles() {
   
         // add hover effect and text
         bubble.addEventListener('mouseover', function () {
-          bubble.style.transform = `scale(5)`; // make circle larger
+          bubble.style.transform = `scale(3)`; // make circle larger
           let textDiv = document.createElement('div');
           textDiv.classList.add('bubble-text');
           textDiv.innerHTML = `${genreData.genre}: ${song.name}, Popularity: ${song.popularity}, Tempo: ${song.tempo}`;
