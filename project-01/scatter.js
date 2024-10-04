@@ -1,44 +1,44 @@
-// Set up dimensions
+// set up dimensions
 const width = Math.min(1200, window.innerWidth - 40);
 const height = Math.min(800, window.innerHeight - 200);
 
-// Create SVG
+// create SVG
 const svg = d3.select("#chart")
     .append("svg")
     .attr("width", width)
     .attr("height", height);
 
-// Create tooltip
+// create tooltip
 const tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
-// Load and process data
+// load and process data
 d3.json("words_df.json").then(data => {
-    // Sort data by absolute log_odds value and take top words
+    // sort data by absolute log_odds value and take top words
     data.sort((a, b) => Math.abs(b.log_odds) - Math.abs(a.log_odds));
     const topWords = data.slice(0, 100);
 
-    // Create color scales for Kendrick and Drake
+    // create color scales for Kendrick and Drake
     const kendrickColor = d3.scaleLinear()
-        .domain([0, 2.06]) // Adjust these values based on your data
+        .domain([0, 2.06]) // based on range in dataset
         .range(["#FFD700", "#FF4500"]); // Gold to Red-Orange
 
     const drakeColor = d3.scaleLinear()
-        .domain([-3.7, 0]) // Adjust these values based on your data
+        .domain([-3.7, 0]) // based on range in dataset
         .range(["#4B0082", "#1E90FF"]); // Indigo to Dodger Blue
 
-    // Function to determine color based on log odds
+    // function to determine color based on log odds
     function getColor(d) {
         return d.log_odds >= 0 ? kendrickColor(d.log_odds) : drakeColor(d.log_odds);
     }
 
-    // Create radius scale based on total frequency
+    // create radius scale based on total frequency
     const radiusScale = d3.scaleSqrt()
         .domain(d3.extent(topWords, d => d.kendrick_frequency + d.drake_frequency))
-        .range([5, 30]); // Minimum and maximum radius
+        .range([5, 30]); // minimum and maximum radius
 
-    // Generate positions for words
+    // generate positions for words
     const positions = topWords.map((d, i) => ({
         x: (width - 40) * Math.random() + 20, // Random x position
         y: (height - 40) * Math.random() + 20, // Random y position
@@ -49,7 +49,7 @@ d3.json("words_df.json").then(data => {
         radius: radiusScale(d.kendrick_frequency + d.drake_frequency)
     }));
 
-    // Add circles for each word
+    // add circles for each word
     const circles = svg.selectAll("circle")
         .data(positions)
         .enter().append("circle")
@@ -61,12 +61,12 @@ d3.json("words_df.json").then(data => {
         .on("mouseover", showTooltip)
         .on("mouseout", hideTooltip);
 
-    // Animate circles
+    // animate circles
     circles.transition()
         .duration(1000)
         .attr("opacity", 0.8);
 
-    // Tooltip functions
+    // tooltip functions
     function showTooltip(event, d) {
         tooltip.transition()
             .duration(200)
@@ -84,7 +84,7 @@ d3.json("words_df.json").then(data => {
             .style("opacity", 0);
     }
 
-    // Add legend
+    // add legend
     const legend = svg.append("g")
         .attr("class", "legend")
         .attr("transform", `translate(${width - 150}, 20)`);

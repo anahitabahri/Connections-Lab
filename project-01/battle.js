@@ -1,12 +1,12 @@
-// Global variables to track user interaction and attribution display
+// global variables to track user interaction and attribution display
 let hasInteracted = false;
 let attributionShown = false;
 
-// Load the dataset from df.json
+// load the dataset from df.json
 fetch('df.json')
     .then(response => response.json())
     .then(data => {
-        // Static data for total genius views and monthly listeners
+        // static data for total genius views and monthly listeners
         const totalViews = {
             'Drake': 12000000,
             'Kendrick Lamar': 30000000
@@ -17,7 +17,7 @@ fetch('df.json')
             'Kendrick Lamar': 65469006
         };
 
-        // Event listeners for each battle metric
+        // event listeners for each battle metric
         document.getElementById('danceabilityLink').addEventListener('click', () => {
             showComparisonResult('Danceability');
         });
@@ -38,7 +38,7 @@ fetch('df.json')
             showStaticResult('Monthly Listeners', monthlyListeners);
         });
 
-        // Function to handle comparison metrics (Danceability, Valence, Popularity)
+        // function to handle comparison metrics (danceability, valence, popularity)
         function showComparisonResult(metric) {
             const drakeValue = getMaxMetricValue(data, metric, 'Drake');
             const kendrickValue = getMaxMetricValue(data, metric, 'Kendrick Lamar');
@@ -49,7 +49,7 @@ fetch('df.json')
             showResult(winner, loser, metric, winnerValue, loserValue);
         }
 
-        // Function to handle static metrics (Total Genius Views, Monthly Listeners)
+        // function to handle static metrics (total genius views, monthly listeners)
         function showStaticResult(metric, dataObject) {
             const drakeValue = dataObject['Drake'];
             const kendrickValue = dataObject['Kendrick Lamar'];
@@ -60,46 +60,46 @@ fetch('df.json')
             showResult(winner, loser, metric, winnerValue, loserValue);
         }
 
-        // Function to display the battle result
+        // function to display the battle result
         function showResult(winner, loser, metric, winnerValue, loserValue) {
             const resultDiv = document.getElementById('result');
             const winnerImage = document.getElementById('winnerImage');
             const attributionDiv = document.getElementById('imageAttribution');
             const lyricsLinkDiv = document.getElementById('lyricsLink');
             
-            // Remove show classes to trigger re-animation
+            // remove show classes to trigger re-animation
             resultDiv.classList.remove('show');
             winnerImage.classList.remove('show');
             
             setTimeout(() => {
-                // Display artist names (use "Kendrick" instead of "Kendrick Lamar" for display)
+                // display artist names (use "Kendrick" instead of "Kendrick Lamar" for display)
                 const displayWinner = winner === 'Kendrick Lamar' ? 'Kendrick' : winner;
                 const displayLoser = loser === 'Kendrick Lamar' ? 'Kendrick' : loser;
                 
-                // Create HTML for both results
+                // create HTML for both results
                 resultDiv.innerHTML = `
                     <div class="winner">${displayWinner} wins with ${formatValue(winnerValue, metric)}</div>
                     <div class="runner-up">${displayLoser}: ${formatValue(loserValue, metric)}</div>
                 `;
                 resultDiv.classList.add('show');
                 
-                // Set and display the winner's image
+                // set and display the winner's image
                 winnerImage.src = winner === 'Drake' ? 'drake.png' : 'kendrick.png';
                 winnerImage.style.display = 'block';
                 
-                // Show image attribution on first interaction
+                // show image attribution on first interaction
                 if (!attributionShown) {
                     attributionDiv.innerHTML = `Illustrations by <a href="https://www.cavsconnect.com/opinion/2024/05/24/kendrick-lamar-disgraces-drake-through-diss-tracks/#modal-photo" target="_blank" rel="noopener noreferrer">Nicolas Soto</a>, possibly from a high school in Florida (woah)`;
                     attributionDiv.classList.add('show');
                     attributionShown = true;
                 }
                 
-                // Animate the winner image
+                // animate the winner image
                 setTimeout(() => {
                     winnerImage.classList.add('show');
                 }, 50);
 
-                // Show lyrics link after first interaction
+                // show lyrics link after first interaction
                 if (!hasInteracted) {
                     hasInteracted = true;
                     setTimeout(() => {
@@ -109,7 +109,7 @@ fetch('df.json')
             }, 50);
         }
 
-        // Function to get the maximum metric value for an artist
+        // function to get the maximum metric value for an artist
         function getMaxMetricValue(data, metric, artist) {
             let maxValue = -Infinity;
             data.forEach(song => {
@@ -123,12 +123,12 @@ fetch('df.json')
             return maxValue === -Infinity ? 0 : maxValue;
         }
 
-        // Function to format the displayed value based on the metric
+        // function to format the displayed value based on the metric
         function formatValue(value, metric) {
             if (metric === 'Danceability' || metric === 'Valence') {
-                return value.toFixed(3);  // Display 3 decimal places for these metrics
+                return value.toFixed(3);  // display 3 decimal places for these metrics
             } else if (metric === 'Total Genius Views' || metric === 'Monthly Listeners') {
-                return value.toLocaleString();  // Add commas for large numbers
+                return value.toLocaleString();  // add commas for large numbers
             } else {
                 return value;
             }
