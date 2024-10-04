@@ -84,7 +84,7 @@ fetch('df.json')
                 resultDiv.classList.add('show');
                 
                 // Set and display the winner's image
-                winnerImage.src = winner === 'Drake' ? './drake.png' : './kendrick.png';
+                winnerImage.src = winner === 'Drake' ? 'drake.png' : 'kendrick.png';
                 winnerImage.style.display = 'block';
                 
                 // Show image attribution on first interaction
