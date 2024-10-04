@@ -1,0 +1,176 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: 28px;
+    margin: 0 0 5px;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    margin: 0 0 20px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.battle-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.battle-section a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 1px solid #333;
+    transition: all 0.2s ease;
+}
+
+.battle-section a:hover {
+    background-color: #333;
+}
+
+#result {
+    font-family: 'Space Mono', monospace;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#result .winner {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#result .runner-up {
+    font-size: 14px;
+    color: #666;
+}
+
+#result.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#winnerImage {
+    display: none;
+    max-width: 200px;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#winnerImage.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#imageAttribution {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px;
+    color: #666;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#imageAttribution.show {
+    opacity: 1;
+}
+
+#imageAttribution a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#imageAttribution a:hover {
+    color: #fff;
+}
+
+#lyricsLink {
+    margin-top: 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#lyricsLink.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#lyricsLink a {
+    color: #FFD700;  /* Yellow-ish color */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#lyricsLink a:hover {
+    color: #FFA500;  /* Slightly darker yellow on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-height: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .battle-section a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    #result .winner {
+        font-size: 18px;
+    }
+
+    #result .runner-up {
+        font-size: 12px;
+    }
+
+    #winnerImage {
+        max-width: 150px;
+    }
+
+    #imageAttribution {
+        font-size: 8px;
+    }
+
+    #lyricsLink {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+}

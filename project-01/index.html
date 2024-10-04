@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drake vs Kendrick Battle</title>
+    <!-- Google Fonts: Space Mono for headings, Roboto Mono for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="battle.css">
+</head>
+<body>
+    <h1>Drake vs Kendrick</h1>
+    <h2>Data Battle</h2>
+    <!-- battle metric buttons -->
+    <div class="battle-section">
+        <a href="#" id="danceabilityLink">Danceability</a>
+        <a href="#" id="valenceLink">Valence</a>
+        <a href="#" id="popularityLink">Popularity</a>
+        <a href="#" id="viewsLink">Genius Views</a>
+        <a href="#" id="listenersLink">Monthly Listeners</a>
+    </div>
+    <!-- result display area -->
+    <div id="result"></div>
+    <!-- winner image -->
+    <img id="winnerImage" src="" alt="Winner">
+    <!-- image attribution -->
+    <div id="imageAttribution"></div>
+    <!-- link to scatter plot (initially hidden) -->
+    <div id="lyricsLink" class="hidden">
+        <a href="scatter.html">idgaf about this battle. let's explore some lyrics!</a>
+    </div>
+
+    <script src="battle.js"></script>
+</body>
+</html>

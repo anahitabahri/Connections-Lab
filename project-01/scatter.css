@@ -1,0 +1,81 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: 28px;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 0 5px;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 0 20px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#chart {
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 12px;
+    pointer-events: none;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#backLink {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#backLink a {
+    color: #FFD700;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+#backLink a:hover {
+    color: #FFA500;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    #backLink a {
+        font-size: 14px;
+    }
+}
