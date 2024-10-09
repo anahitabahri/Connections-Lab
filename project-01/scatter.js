@@ -110,8 +110,8 @@ d3.json("words_df.json").then(data => {
 
     // legend.append("text")
     //     .attr("x", 15)
-        .attr("y", 29)
-        .text("Drake")
-        .style("font-size", "12px")
-        .attr("alignment-baseline", "middle");
+        // .attr("y", 29)
+        // .text("Drake")
+        // .style("font-size", "12px")
+        // .attr("alignment-baseline", "middle");
 });
