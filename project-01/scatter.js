@@ -85,31 +85,31 @@ d3.json("words_df.json").then(data => {
     }
 
     // add legend
-    const legend = svg.append("g")
-        .attr("class", "legend")
-        .attr("transform", `translate(${width - 150}, 20)`);
+    // const legend = svg.append("g")
+    //     .attr("class", "legend")
+    //     .attr("transform", `translate(${width - 150}, 20)`);
 
-    legend.append("circle")
-        .attr("cx", 0)
-        .attr("cy", 0)
-        .attr("r", 6)
-        .style("fill", kendrickColor(1));
+    // legend.append("circle")
+    //     .attr("cx", 0)
+    //     .attr("cy", 0)
+    //     .attr("r", 6)
+    //     .style("fill", kendrickColor(1));
 
-    legend.append("circle")
-        .attr("cx", 0)
-        .attr("cy", 25)
-        .attr("r", 6)
-        .style("fill", drakeColor(-1));
+    // legend.append("circle")
+    //     .attr("cx", 0)
+    //     .attr("cy", 25)
+    //     .attr("r", 6)
+    //     .style("fill", drakeColor(-1));
 
-    legend.append("text")
-        .attr("x", 15)
-        .attr("y", 4)
-        .text("Kendrick")
-        .style("font-size", "12px")
-        .attr("alignment-baseline", "middle");
+    // legend.append("text")
+    //     .attr("x", 15)
+    //     .attr("y", 4)
+    //     .text("Kendrick")
+    //     .style("font-size", "12px")
+    //     .attr("alignment-baseline", "middle");
 
-    legend.append("text")
-        .attr("x", 15)
+    // legend.append("text")
+    //     .attr("x", 15)
         .attr("y", 29)
         .text("Drake")
         .style("font-size", "12px")
