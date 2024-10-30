@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cybertrucks in the wild</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>cybertrucks in the wild</h1>
+    
+    <div>
+        <input type="file" id="photo-input" accept="image/*"/>
+        <img id="photo-preview"/>
+        <input id="location-input" type="text" placeholder=" where did have the displeasure of spotting it? 😟"/>
+        <button id="submit-sighting">submit sighting</button>
+    </div>
+    
+    <div>
+        <h2>recent sightings</h2>
+        <button id="get-sightings">show all sightings</button>
+        <div id="sightings-info"></div>
+    </div>
+    
+    
+    <script src="app.js"></script>
+</body>
+</html>
